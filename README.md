@@ -28,6 +28,10 @@ copy_images(Type=dataset) - Resizes images to 320x160 for training<br>
 data_process.prepare_data(args) - Loads data into PyTorch structure<br>
 train_ADS.Train(args) - Trains the autonomous driving system<br>
 trian_ADS.Train(args,dataset,cuda) - Trains the autonomous driving system<br>
-
+<br>
 # 2. M-Agent
-To enable effective and automatic MR extraction, AUTOMT introduces the M-agent. As illustrated in Figure 2, we use the Gherkin syntax, pre-defined ontology and a LLM agent to define a LLM-based rule parser. A traffic rule is provided to multiple LLM-based rule parsers, which generate candidate MRs. These MRs are then validated using SelfCheckGPT to identify the optimal one. Then all optimal MRs are embedded into a RAG database.
+To enable effective and automatic MR extraction, AUTOMT introduces the M-agent. As illustrated in Figure 2, we use the Gherkin syntax, pre-defined ontology and a LLM agent to define a LLM-based rule parser. A traffic rule is provided to multiple LLM-based rule parsers, which generate candidate MRs. These MRs are then validated using SelfCheckGPT to identify the optimal one. Then all optimal MRs are embedded into a RAG database.<br>
+<img src="https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Images/Magent.jpg" width="60%"/><br>
+1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/M_Agent/M-Agent.py' target='_blank'>M-Agent.py</a>.<br> - extraction MR from Traffic Rules
+2. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/M_Agent/SelfCheckGPT.py' target='_blank'>SelfCheckGPT.py</a>.<br> - Use selfcheckGPT select best MR
+3. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/M_Agent/Generate_RAG.py' target='_blank'>Generate_RAG.py</a>.<br> - Transform MR results become Rag database.
