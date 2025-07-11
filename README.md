@@ -4,7 +4,7 @@ Autonomous Driving Systems (ADS) are safety-critical, where failures can have se
 
 
 # 1 ADS: Data & Training Pipeline
-## 1.1 Data Process 
+## 1.1 Data Prepare 
 This project is based on two well-known autonomous driving datasets: A2D2 and Udacity. To process the data, you first need to download these datasets:<br>
 Udacity: <a href='https://github.com/udacity/self-driving-car?tab=readme-ov-file' target='_blank'>Self-Driving Car</a><br>
 Notice: Due to privacy and data usage restrictions, we cannot provide direct download links for the Udacity dataset. Please obtain it through official channels.<br>
@@ -18,6 +18,7 @@ Directory path: Data/ADS_data/A2D2/<br>
 Contains the following sequences:camera_lidar-20180810150607/,camera_lidar-20190401121727/,camera_lidar-20190401145936/<br>
 Each subfolder includes camera images and corresponding steering angle and speeds csv provided by the datasets.<br>
 For the all dataset, we combine data fromregions, which are then proportionally split into training, validation, and test sets.
+## 1.2 Training ADS
 After organizing the data, run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Train_ADS.py' target='_blank'>Train_ADS.py</a>.<br> which includes the following steps:<br>
 collect_datasets(Type=dataset) - Downsamples images and pairs sensor data<br>
 OneFormer.Check_OneFormer(args) - Generates semantic segmentation results<br>
