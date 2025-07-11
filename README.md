@@ -1,6 +1,7 @@
 # AutoMT: A Multi-Agent LLM Framework for Automated Metamorphic Testing of Autonomous Driving Systems
 
 Autonomous Driving Systems (ADS) are safety-critical, where failures can have severe consequences. Metamorphic Testing (MT) is effective for fault detection in ADS, but existing methods rely heavily on human effort and are hard to automate in industrial pipelines. We present AutoMT, a multi-agent MT framework powered by Large Language Models (LLMs) that automates the extraction of Metamorphic Relations (MRs) from local traffic rules and generates valid follow-up test cases. AutoMT uses LLMs to extract scenario ontologies and define MRs in Gherkin syntax. A vision-language agent analyzes each scenario, while a search agent retrieves suitable MRs from a RAG-based database to generate follow-up test cases. AutoMT can apply advanced computer vision techniques for MT on real-world datasets or perform MT directly in simulation. Qualitative and quantitative evaluations show that \tool\ generates valid MRs and outperforms baselines by up to 28.26% in generating valid follow-up test and 19.28% in violation detection. AutoMT enables fully automated MT for ADS and can be integrated as a plug-in leveraging local traffic rules and existing test cases in industrial pipelines.
+![Uploading ASE_overall.jpg…]()
 
 
 # 1 ADS: Data & Training Pipeline
@@ -27,4 +28,6 @@ copy_images(Type=dataset) - Resizes images to 320x160 for training<br>
 data_process.prepare_data(args) - Loads data into PyTorch structure<br>
 train_ADS.Train(args) - Trains the autonomous driving system<br>
 trian_ADS.Train(args,dataset,cuda) - Trains the autonomous driving system<br>
-        
+
+# 2. M-Agent
+To enable effective and automatic MR extraction, AUTOMT introduces the M-agent. As illustrated in Figure 2, we use the Gherkin syntax, pre-defined ontology and a LLM agent to define a LLM-based rule parser. A traffic rule is provided to multiple LLM-based rule parsers, which generate candidate MRs. These MRs are then validated using SelfCheckGPT to identify the optimal one. Then all optimal MRs are embedded into a RAG database.
