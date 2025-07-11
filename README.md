@@ -44,20 +44,32 @@ To enable effective and automatic MR extraction, AUTOMT introduces the M-agent. 
 1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Baseline.py' target='_blank'>Baseline.py</a>.<br> -  Baseline
 Baseline1: Auto MT Pipeline with LLM-based MR Generation without traffic rule Baseline2: Auto MT Pipeline with LLM-based MR Generation with traffic rule Baseline 3: Auto MT with Manually Generated MR
 
-# Image Generation
+# 4.Image Generation
 1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Compare_baseline.py' target='_blank'>T_Agent_RAG.py</a>.<br> -  Generation images Set control= 1 or 2
 2. control = 1 Generate image from Flux-inpainting and Pix2Pix Install all necessary packages required from this page <br>
-<a href='https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev' target='_blank'>Flux inpainting</a>. or Low vram type <a href='https://huggingface.co/mit-han-lab/svdq-int4-flux.1-fill-dev' target='_blank'>int4-flux.1-fill-dev</a>.<br>  and <a href='https://github.com/timothybrooks/instruct-pix2pix' target='_blank'>instruct-pix2pix</a>.<br>
+a.<a href='https://github.com/timothybrooks/instruct-pix2pix' target='_blank'>instruct-pix2pix</a>.<br>
+b.<a href='https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev' target='_blank'>Flux inpainting</a>. or Low vram type <a href='https://huggingface.co/mit-han-lab/svdq-int4-flux.1-fill-dev' target='_blank'>int4-flux.1-fill-dev</a>.<br>
 3. control = 2 This model adopt the Multimodal LLM to process the reference image and user's editing instruction. 
 <a href='https://github.com/stepfun-ai/Step1X-Edit' target='_blank'>Step1X-Edit</a>.<br> Pleas install this model at <a href='https://github.com/asvonavnsnvononaon/AutoMT/tree/main/Other_tools/Step1X-Edit' target='_blank'>Step1X-Edit-file</a>.<br>
 
-# Video Generation
-1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Compare_baseline.py' target='_blank'>T_Agent_RAG.py</a>.<br> -  Generation images Set control= 1 or 2
-2. control = 1 Generate image from Flux-inpainting and Pix2Pix Install all necessary packages required from this page <br>
+# 5.Video Generation
+1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Generation_video.py' target='_blank'>Generation_video.py</a>.<br> -  Generation Videos
+2. Install all necessary packages required from this page <br>
+<a href='https://github.com/OpenDriveLab/Vista' target='_blank'>Vista</a>. or Low vram type <a href='https://github.com/rerun-io/hf-example-vista' target='_blank'>CPU-Vista</a>.<br>
+Pleas install this model at <a href='https://github.com/asvonavnsnvononaon/AutoMT/tree/main/Other_tools/Vista' target='_blank'>Vista-file</a>.<br>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/0.gif" width="30%">
+    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/1.gif" width="30%">
+    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/2.gif" width="30%">
+    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/3.gif" width="30%">
+    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/4.gif" width="30%">
+    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/5.gif" width="30%">
+    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/6.gif" width="30%">
+    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/7.gif" width="30%">
+    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/8.gif" width="30%">
+</div>
+<br>
 
-
-
-# 
 
 
    
