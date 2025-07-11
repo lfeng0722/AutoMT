@@ -51,6 +51,10 @@ Baseline1: Auto MT Pipeline with LLM-based MR Generation without traffic rule Ba
 3. control = 2 This model adopt the Multimodal LLM to process the reference image and user's editing instruction. 
 <a href='https://github.com/stepfun-ai/Step1X-Edit' target='_blank'>Step1X-Edit</a>.<br> Pleas install this model at <a href='https://github.com/asvonavnsnvononaon/AutoMT/tree/main/Other_tools/Step1X-Edit' target='_blank'>Step1X-Edit-file</a>.<br>
 
+# Video Generation
+1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Compare_baseline.py' target='_blank'>T_Agent_RAG.py</a>.<br> -  Generation images Set control= 1 or 2
+2. control = 1 Generate image from Flux-inpainting and Pix2Pix Install all necessary packages required from this page <br>
+
 
 
 # 
