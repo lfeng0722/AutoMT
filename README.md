@@ -20,7 +20,8 @@ Each subfolder includes camera images and corresponding steering angle and speed
 For the all dataset, we combine data fromregions, which are then proportionally split into training, validation, and test sets.
 ## 1.2 Training ADS
 After organizing the data, run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Train_ADS.py' target='_blank'>Train_ADS.py</a>.<br> which includes the following steps:<br>
-collect_datasets(Type=dataset) - Downsamples images and pairs sensor data<br>
+data_process.data_process(args) - Aligns and synchronizes camera image data with corresponding CAN bus data<br>
+collect_datasets(Type=dataset) -  Splits the processed dataset into training, validation, and test sets.<br>
 OneFormer.Check_OneFormer(args) - Generates semantic segmentation results<br>
 copy_images(Type=dataset) - Resizes images to 320x160 for training<br>
 data_process.prepare_data(args) - Loads data into PyTorch structure<br>
