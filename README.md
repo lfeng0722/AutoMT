@@ -18,7 +18,7 @@ Directory path: Data/ADS_data/A2D2/<br>
 Contains the following sequences:camera_lidar-20180810150607/,camera_lidar-20190401121727/,camera_lidar-20190401145936/<br>
 Each subfolder includes camera images and corresponding steering angle and speeds csv provided by the datasets.<br>
 For the all dataset, we combine data fromregions, which are then proportionally split into training, validation, and test sets.
-After organizing the data, run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Train_ADS.py' target='_blank'>Train_ADS.py.py</a>.<br> which includes the following steps:<br>
+After organizing the data, run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Train_ADS.py' target='_blank'>Train_ADS.py</a>.<br> which includes the following steps:<br>
 collect_datasets(Type=dataset) - Downsamples images and pairs sensor data<br>
 OneFormer.Check_OneFormer(args) - Generates semantic segmentation results<br>
 copy_images(Type=dataset) - Resizes images to 320x160 for training<br>
