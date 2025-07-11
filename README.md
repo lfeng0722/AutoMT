@@ -45,7 +45,7 @@ To enable effective and automatic MR extraction, AUTOMT introduces the M-agent. 
 Baseline1: Auto MT Pipeline with LLM-based MR Generation without traffic rule Baseline2: Auto MT Pipeline with LLM-based MR Generation with traffic rule Baseline 3: Auto MT with Manually Generated MR
 
 # 4.Image Generation
-1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Compare_baseline.py' target='_blank'>T_Agent_RAG.py</a>.<br> -  Generation images Set control= 1 or 2
+1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Compare_baseline.py' target='_blank'>Compare_baseline.py</a>.<br> -  Generation images Set control= 1 or 2
 2. control = 1 Generate image from Flux-inpainting and Pix2Pix Install all necessary packages required from this page <br>
 a.<a href='https://github.com/timothybrooks/instruct-pix2pix' target='_blank'>instruct-pix2pix</a>.<br>
 b.<a href='https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev' target='_blank'>Flux inpainting</a>. or Low vram type <a href='https://huggingface.co/mit-han-lab/svdq-int4-flux.1-fill-dev' target='_blank'>int4-flux.1-fill-dev</a>.<br>
@@ -70,6 +70,9 @@ Pleas install this model at <a href='https://github.com/asvonavnsnvononaon/AutoM
 </div>
 <br>
 
+# 6.Get validation rates and violation rates
+1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Compare_baseline.py' target='_blank'>Compare_baseline.py</a>.<br> -  Generation images Set control= 3 -> validation rate
+2. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Compare_baseline.py' target='_blank'>Compare_baseline.py</a>.<br> -  Generation images Set control= 4 -> violation rate
 
 
    
