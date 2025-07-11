@@ -129,6 +129,7 @@ def copy_images(Type="Udacity"):
 if __name__ == "__main__":
     datasets = ["Udacity","A2D2"]
     args = Paramenters.parse_args()
+    data_process.data_process(args)
     cuda = "cuda:1"
     for dataset in datasets:
         collect_datasets(Type=dataset)
