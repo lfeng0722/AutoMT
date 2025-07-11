@@ -9,6 +9,14 @@ This project is based on two well-known autonomous driving datasets: A2D2 and Ud
 Udacity: <a href='https://github.com/udacity/self-driving-car?tab=readme-ov-file' target='_blank'>Self-Driving Car</a><br>
 Notice: Due to privacy and data usage restrictions, we cannot provide direct download links for the Udacity dataset. Please obtain it through official channels.<br>
 A2D2: <a href='https://www.a2d2.audi/a2d2/en.html' target='_blank'>A2D2</a><br>
+The training data for the Autonomous Driving System (ADS) is organized under the Data/ADS_data/ directory. We include two sources of data: Udacity and A2D2, each stored in separate subdirectories for clarity and modularity.<br>
+ Udacity Dataset<br>
+Directory path: Data/ADS_data/udacity/
+Contains the following subfolders:HMB1/,HMB2/,HMB4/,HMB5<br>/,HMB6/<br>
+A2D2 Dataset<br>
+Directory path: Data/ADS_data/A2D2/<br>
+Contains the following sequences:camera_lidar-20180810150607/,camera_lidar-20190401121727/,camera_lidar-20190401145936/<br>
+Each subfolder includes camera images and corresponding steering angle and speeds csv provided by the datasets.<br>
 For the all dataset, we combine data fromregions, which are then proportionally split into training, validation, and test sets.
 After organizing the data, run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/main.py' target='_blank'>main.py</a>.<br> which includes the following steps:<br>
 collect_datasets(Type=dataset) - Downsamples images and pairs sensor data<br>
