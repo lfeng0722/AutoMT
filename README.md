@@ -41,11 +41,19 @@ To enable effective and automatic MR extraction, AUTOMT introduces the M-agent. 
 1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/T_Agent_RAG.py' target='_blank'>T_Agent_RAG.py</a>.<br> -  T-Agent and Rag
 2. Install all necessary packages required from this page <a href='https://colab.research.google.com/github/NirDiamant/RAG_Techniques/blob/main/all_rag_techniques/simple_csv_rag.ipynb#scrollTo=UBLofB9R27Eg' target='_blank'>csv_rag.py</a>.<br>
 ## 3.2 Baseline method 
-1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Baseline.py' target='_blank'>Baseline.py.py.py</a>.<br> -  Baseline
+1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Baseline.py' target='_blank'>Baseline.py</a>.<br> -  Baseline
 Baseline1: Auto MT Pipeline with LLM-based MR Generation without traffic rule Baseline2: Auto MT Pipeline with LLM-based MR Generation with traffic rule Baseline 3: Auto MT with Manually Generated MR
 
 # Image Generation
-1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Compare_baseline.py' target='_blank'>T_Agent_RAG.py</a>.<br> -  Generation images Set contro= 1 or 2
+1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Compare_baseline.py' target='_blank'>T_Agent_RAG.py</a>.<br> -  Generation images Set control= 1 or 2
 2. control = 1 Generate image from Flux-inpainting and Pix2Pix Install all necessary packages required from this page <br>
-<a href='https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev' target='_blank'>Flux inpainting</a>. or Low vram type <a href='https://huggingface.co/mit-han-lab/svdq-int4-flux.1-fill-dev' target='_blank'>int4-flux.1-fill-dev</a>.<br>
+<a href='https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev' target='_blank'>Flux inpainting</a>. or Low vram type <a href='https://huggingface.co/mit-han-lab/svdq-int4-flux.1-fill-dev' target='_blank'>int4-flux.1-fill-dev</a>.<br>  and <a href='https://github.com/timothybrooks/instruct-pix2pix' target='_blank'>instruct-pix2pix</a>.<br>
+3. control = 2 This model adopt the Multimodal LLM to process the reference image and user's editing instruction. 
+<a href='https://github.com/stepfun-ai/Step1X-Edit' target='_blank'>Step1X-Edit</a>.<br> Pleas install this model at <a href='https://github.com/asvonavnsnvononaon/AutoMT/tree/main/Other_tools/Step1X-Edit' target='_blank'>Step1X-Edit-file</a>.<br>
+
+
+
+# 
+
+
    
