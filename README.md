@@ -9,3 +9,12 @@ This project is based on two well-known autonomous driving datasets: A2D2 and Ud
 Udacity: <a href='https://github.com/udacity/self-driving-car?tab=readme-ov-file' target='_blank'>Self-Driving Car</a><br>
 Notice: Due to privacy and data usage restrictions, we cannot provide direct download links for the Udacity dataset. Please obtain it through official channels.<br>
 A2D2: <a href='https://www.a2d2.audi/a2d2/en.html' target='_blank'>A2D2</a><br>
+For the all dataset, we combine data fromregions, which are then proportionally split into training, validation, and test sets.
+After organizing the data, run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/main.py' target='_blank'>main.py</a>.<br> which includes the following steps:<br>
+collect_datasets(Type=dataset) - Downsamples images and pairs sensor data<br>
+OneFormer.Check_OneFormer(args) - Generates semantic segmentation results<br>
+copy_images(Type=dataset) - Resizes images to 320x160 for training<br>
+data_process.prepare_data(args) - Loads data into PyTorch structure<br>
+train_ADS.Train(args) - Trains the autonomous driving system<br>
+trian_ADS.Train(args,dataset,cuda) - Trains the autonomous driving system<br>
+        
