@@ -58,15 +58,15 @@ b.<a href='https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev' target='_bl
 <a href='https://github.com/OpenDriveLab/Vista' target='_blank'>Vista</a>. or Low vram type <a href='https://github.com/rerun-io/hf-example-vista' target='_blank'>CPU-Vista</a>.<br>
 Pleas install this model at <a href='https://github.com/asvonavnsnvononaon/AutoMT/tree/main/Other_tools/Vista' target='_blank'>Vista-file</a>.<br>
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/0.gif" width="30%">
-    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/1.gif" width="30%">
-    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/2.gif" width="30%">
-    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/3.gif" width="30%">
-    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/4.gif" width="30%">
-    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/5.gif" width="30%">
-    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/6.gif" width="30%">
-    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/7.gif" width="30%">
-    <img src="https://github.com/asvonavnsnvononaon/ITMT-Issta/blob/main/Paper_images/8.gif" width="30%">
+    <img src="https://raw.githubusercontent.com/asvonavnsnvononaon/AutoMT/main/Images/0.gif" width="30%">
+    <img src="https://raw.githubusercontent.com/asvonavnsnvononaon/AutoMT/main/Images/1.gif" width="30%">
+    <img src="https://raw.githubusercontent.com/asvonavnsnvononaon/AutoMT/main/Images/2.gif" width="30%">
+    <img src="https://raw.githubusercontent.com/asvonavnsnvononaon/AutoMT/main/Images/3.gif" width="30%">
+    <img src="https://raw.githubusercontent.com/asvonavnsnvononaon/AutoMT/main/Images/4.gif" width="30%">
+    <img src="https://raw.githubusercontent.com/asvonavnsnvononaon/AutoMT/main/Images/5.gif" width="30%">
+    <img src="https://raw.githubusercontent.com/asvonavnsnvononaon/AutoMT/main/Images/6.gif" width="30%">
+    <img src="https://raw.githubusercontent.com/asvonavnsnvononaon/AutoMT/main/Images/7.gif" width="30%">
+    <img src="https://raw.githubusercontent.com/asvonavnsnvononaon/AutoMT/main/Images/8.gif" width="30%">
 </div>
 <br>
 
