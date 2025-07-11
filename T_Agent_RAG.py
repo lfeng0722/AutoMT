@@ -140,8 +140,8 @@ class Matching_MR:
            #     f"'any roads' can be used if no specific type fits. "
           #      f"Reply format: road network: <road_type>"
             #)
-            #prompt = (f"Analyze this driving scene. Describe the time of day, weather conditions, road type (Only one of these {', '.join(self.road_types)}.) 'any roads' can be used only when none of the specific road types fit.  and any objects around the vehicle. Reply format: time: [2 words], weather: [2 words], road: [1-2 words], objects: ")
-            prompt = (f"Analyze this driving scene. Describe the road type (must chosen from one of these {', '.join(self.road_types)}.) If there no suitable one, 'any roads' can be used only when none of the specific road types fit.  output: road: [1-2 words]  ")
+            prompt = (f"Analyze this driving scene. Describe the time of day, weather conditions, road type (Only one of these {', '.join(self.road_types)}.) 'any roads' can be used only when none of the specific road types fit.  and any objects around the vehicle. Reply format: time: [2 words], weather: [2 words], road: [1-2 words], objects: ")
+            #prompt = (f"Analyze this driving scene. Describe the road type (must chosen from one of these {', '.join(self.road_types)}.) If there no suitable one, 'any roads' can be used only when none of the specific road types fit.  output: road: [1-2 words]  ")
             messages = [
                 {
                     "role": "user",
@@ -195,7 +195,6 @@ class Matching_MR:
         Scen  = re.search(r'road:\s*(\w+)', scene_description[0]).group(1)
         if Scen not in self.road_types:
             Scen = "any roads"
-        chose = 0
         if chose == 1:
 
             if self.VLM=="1":
@@ -500,20 +499,6 @@ if __name__ == "__main__":
     print("_________________Success____________________")
 
 
-#[1, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 22, 10, 10, 10, 10, 10, 0, 9, 0, 0, 0, 0, 0, 11, 0, 0, 10, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 10, 9, 9, 0, 0, 0, 0, 9, 0, 0]
-#[9, 9, 9, 8, 0, 0, 6, 6, 6, 8, 6, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 6, 38, 6, 8, 8, 8, 8, 8, 0, 6, 6, 5, 5, 14, 8]
-
-#[2, 1, 5, 0, 3, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 5, 7, 8, 2, 3, 5, 0, 3, 3, 7, 1, 0, 0, 2, 9, 0, 0, 1, 0, 2, 0, 0, 1, 10, 2, 5, 0, 0, 0, 0, 0, 0, 2, 0, 7, 3, 5, 3, 4, 2, 4, 6, 0, 0, 4, 2, 3, 0, 3, 7, 3, 1, 8, 3]
-#[7, 11, 2, 14, 10, 0, 4, 6, 8, 7, 5, 9, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 11, 4, 3, 6, 3, 12, 13, 12, 12, 7, 9, 7, 9, 7, 3, 10]
-
-#[6, 5, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 0, 4, 5, 6, 2, 2, 5, 0, 3, 2, 4, 0, 1, 4, 0, 4, 0, 0, 5, 0, 0, 1, 3, 1, 0, 7, 3, 0, 0, 1, 0, 0, 0, 4, 0, 3, 4, 1, 9, 6, 6, 4, 9, 0, 0, 3, 3, 2, 3, 3, 4, 5, 8, 5, 3]
-#[9, 7, 11, 7, 8, 0, 7, 10, 6, 16, 6, 9, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 9, 5, 7, 8, 8, 5, 10, 0, 5, 8, 11, 6, 13, 8, 5, 4]
-
-#[3, 3, 3, 1, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 6, 6, 4, 3, 3, 1, 0, 6, 2, 4, 1, 1, 1, 1, 5, 0, 0, 4, 0, 1, 0, 1, 0, 5, 4, 5, 0, 0, 0, 0, 0, 0, 5, 0, 5, 6, 8, 4, 5, 1, 4, 4, 0, 0, 6, 7, 4, 5, 5, 5, 2, 1, 6, 0]
-#[9, 6, 11, 3, 5, 0, 13, 6, 10, 3, 7, 6, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 5, 7, 15, 4, 11, 7, 11, 12, 14, 5, 8, 4, 8, 9, 7, 10]
-
-#[3, 1, 9, 0, 11, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 1, 2, 6, 4, 3, 5, 0, 3, 5, 6, 0, 1, 4, 1, 1, 0, 0, 4, 0, 0, 0, 1, 1, 5, 6, 5, 0, 0, 4, 0, 0, 0, 2, 0, 5, 4, 4, 0, 3, 3, 6, 2, 0, 0, 7, 2, 7, 1, 4, 5, 4, 1, 4, 4]
-#[6, 10, 11, 6, 10, 0, 8, 9, 7, 5, 10, 13, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 6, 9, 6, 10, 8, 8, 0, 9, 7, 10, 5, 2, 7, 10, 8, 9]
 
 
 
