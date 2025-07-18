@@ -1,7 +1,12 @@
 # AutoMT: A Multi-Agent LLM Framework for Automated Metamorphic Testing of Autonomous Driving Systems
 
+
+
+
+
 ## Introduction
-Autonomous Driving Systems (ADS) are safety-critical, where failures can be severe. While Metamorphic Testing (MT) is effective for fault detection in ADS, existing methods rely heavily on manual effort and lack automation. We present AutoMT, a multi-agent MT framework powered by Large Language Models (LLMs) that automates the extraction of Metamorphic Relations (MRs) from local traffic rules and the generation of valid follow-up test cases. AutoMT leverages LLMs to extract MRs from traffic rules in Gherkin syntax using a predefined ontology. A vision-language agent analyzes scenarios, and a search agent retrieves suitable MRs from a RAG-based database to generate follow-up cases via computer vision. Experiments show that AutoMT outperforms baselines by up to 28.26% in valid test generation and 20.55% in violation detection. AutoMT enables fully automated MT for ADS and integrates seamlessly with industrial pipelines using local rules and existing tests.
+Autonomous Driving Systems (ADS) are safety-critical, where failures can be severe. While Metamorphic Testing (MT) is effective for fault detection in ADS, existing methods rely heavily on manual effort and lack automation. We present AutoMT, a multi-agent MT framework powered by Large Language Models (LLMs) that automates the extraction of Metamorphic Relations (MRs) from local traffic rules and the generation of valid follow-up test cases. AutoMT leverages LLMs to extract MRs from traffic rules in Gherkin syntax using a predefined ontology. A vision-language agent analyzes scenarios, and a search agent retrieves suitable MRs from a RAG-based database to generate follow-up cases via computer vision. Experiments show that AutoMT outperforms baselines by up to 28.26% in valid test generation and 20.55% in violation detection. AutoMT enables fully automated MT for ADS and integrates seamlessly with industrial pipelines using local rules and existing tests. Our code and supplementary material are available at <a href='https://anonymous.4open.science/r/AutoMT-9442' target='_blank'>AutoMT</a><br>.
+
 <img src="https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Images/ASE_overall.jpg" width="60%"/>
 
 ## 📖 Table of Contents
@@ -14,7 +19,7 @@ Autonomous Driving Systems (ADS) are safety-critical, where failures can be seve
 - [Video Generation](#video-generation)
 - [Validation and Violation Metrics](#validation-and-violation-metrics)
 
-# 1 ADS: Data & Training Pipeline
+## Data and Training Pipeline
 ## 1.1 Data Prepare 
 This project is based on two well-known autonomous driving datasets: A2D2 and Udacity. To process the data, you first need to download these datasets:<br>
 Udacity: <a href='https://github.com/udacity/self-driving-car?tab=readme-ov-file' target='_blank'>Self-Driving Car</a><br>
@@ -39,14 +44,15 @@ data_process.prepare_data(args) - Loads data into PyTorch structure<br>
 train_ADS.Train(args) - Trains the autonomous driving system<br>
 trian_ADS.Train(args,dataset,cuda) - Trains the autonomous driving system<br>
 <br>
-# 2. M-Agent
+## M-Agent Extracting MRs from Rules
 To enable effective and automatic MR extraction, AUTOMT introduces the M-agent. As illustrated in Figure 2, we use the Gherkin syntax, pre-defined ontology and a LLM agent to define a LLM-based rule parser. A traffic rule is provided to multiple LLM-based rule parsers, which generate candidate MRs. These MRs are then validated using SelfCheckGPT to identify the optimal one. Then all optimal MRs are embedded into a RAG database.<br>
 <img src="https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Images/Magent.jpg" width="60%"/><br>
 1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/M_Agent/M-Agent.py' target='_blank'>M-Agent.py</a>.<br> - extraction MR from Traffic Rules
 2. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/M_Agent/SelfCheckGPT.py' target='_blank'>SelfCheckGPT.py</a>.<br> - Use selfcheckGPT select best MR
 3. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/M_Agent/Generate_RAG.py' target='_blank'>Generate_RAG.py</a>.<br> - Transform MR results become Rag database.
 
-# 3. T-Agent and Rag
+## T-Agent and RAG based MR Matching
+
 ## 3.1 AutoMT
 1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/T_Agent_RAG.py' target='_blank'>T_Agent_RAG.py</a>.<br> -  T-Agent and Rag
 2. Install all necessary packages required from this page <a href='https://colab.research.google.com/github/NirDiamant/RAG_Techniques/blob/main/all_rag_techniques/simple_csv_rag.ipynb#scrollTo=UBLofB9R27Eg' target='_blank'>csv_rag.py</a>.<br>
@@ -54,7 +60,7 @@ To enable effective and automatic MR extraction, AUTOMT introduces the M-agent. 
 1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Baseline.py' target='_blank'>Baseline.py</a>.<br> -  Baseline
 Baseline1: Auto MT Pipeline with LLM-based MR Generation without traffic rule Baseline2: Auto MT Pipeline with LLM-based MR Generation with traffic rule Baseline 3: Auto MT with Manually Generated MR
 
-# 4.Image Generation
+## Image Generation
 1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Compare_baseline.py' target='_blank'>Compare_baseline.py</a>.<br> -  Generation images Set control= 1 or 2
 2. control = 1 Generate image from Flux-inpainting and Pix2Pix Install all necessary packages required from this page <br>
 a.<a href='https://github.com/timothybrooks/instruct-pix2pix' target='_blank'>instruct-pix2pix</a>.<br>
@@ -62,11 +68,12 @@ b.<a href='https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev' target='_bl
 3. control = 2 This model adopt the Multimodal LLM to process the reference image and user's editing instruction. 
 <a href='https://github.com/stepfun-ai/Step1X-Edit' target='_blank'>Step1X-Edit</a>.<br> Pleas install this model at <a href='https://github.com/asvonavnsnvononaon/AutoMT/tree/main/Other_tools/Step1X-Edit' target='_blank'>Step1X-Edit-file</a>.<br>
 
-# 5.Video Generation
+## Video Generation
+
 1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Generation_video.py' target='_blank'>Generation_video.py</a>.<br> -  Generation Videos
 2. Install all necessary packages required from this page <br>
 <a href='https://github.com/OpenDriveLab/Vista' target='_blank'>Vista</a>. or Low vram type <a href='https://github.com/rerun-io/hf-example-vista' target='_blank'>CPU-Vista</a>.<br>
-Pleas install this model at <a href='https://github.com/asvonavnsnvononaon/AutoMT/tree/main/Other_tools/Vista' target='_blank'>Vista-file</a>.<br>
+Please install this model at <a href='https://github.com/asvonavnsnvononaon/AutoMT/tree/main/Other_tools/Vista' target='_blank'>Vista-file</a>.<br>
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
     <img src="https://raw.githubusercontent.com/asvonavnsnvononaon/AutoMT/main/Images/0.gif" width="30%">
     <img src="https://raw.githubusercontent.com/asvonavnsnvononaon/AutoMT/main/Images/1.gif" width="30%">
@@ -80,7 +87,7 @@ Pleas install this model at <a href='https://github.com/asvonavnsnvononaon/AutoM
 </div>
 <br>
 
-# 6.Get validation rates and violation rates
+## Validation and Violation Metrics
 1. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Compare_baseline.py' target='_blank'>Compare_baseline.py</a>.<br> -  Generation images Set control= 3 -> validation rate
 2. run <a href='https://github.com/asvonavnsnvononaon/AutoMT/blob/main/Compare_baseline.py' target='_blank'>Compare_baseline.py</a>.<br> -  Generation images Set control= 4 -> violation rate
 
